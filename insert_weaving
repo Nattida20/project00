@@ -1,0 +1,15 @@
+# project00<?php
+include 'condb.php';
+$wequ = $_POST['wequ'];
+
+$sql = "INSERT INTO fabricweaving(weaving_equ) VALUES('$wequ')";
+$result = mysqli_query($conn,$sql);
+if($result){
+    echo "<script>alert('บันทึกข้อมูลเรียบร้อย');</script>";
+    echo "<script>window.location='show_type.php';</script>";
+}else{
+    echo "<script>alert('ไม่สามารบันทึกข้อมูลได้');</script>";
+}
+mysqli_close($conn);
+
+?>
