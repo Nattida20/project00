@@ -1,0 +1,15 @@
+<?php
+include 'condb.php';
+$dname = $_POST['dname'];
+
+$sql = "INSERT INTO fabricdata(data_name) VALUES('$dname')";
+$result = mysqli_query($conn,$sql);
+if($result){
+    echo "<script>alert('บันทึกข้อมูลเรียบร้อย');</script>";
+    echo "<script>window.location='show_type.php';</script>";
+}else{
+    echo "<script>alert('ไม่สามารบันทึกข้อมูลได้');</script>";
+}
+mysqli_close($conn);
+
+?>
